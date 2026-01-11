@@ -715,15 +715,15 @@ void drawMainMenu() {
       
       // Рисуем номер (обычный размер) - УВЕЛИЧЕНО В 2 РАЗА
       externalDisplay.setTextColor(TFT_YELLOW);
-      externalDisplay.setTextSize(2);  // было 1
-      externalDisplay.setCursor(30, y + 8);  // было 15, y + 4 - +8 для выравнивания с крупным текстом
+      externalDisplay.setTextSize(1);  // было 1
+      externalDisplay.setCursor(15, y + 4);  // было 15, y + 4 - +8 для выравнивания с крупным текстом
       externalDisplay.print(number);
       
       // Вычисляем доступную ширину для текста - УВЕЛИЧЕНО В 2 РАЗА
       // Экран = 480px, отступ = 30px, номер "X. " = ~36px (3 символа * 12px при size=2)
       // Для size=4: каждый символ = 24px ширины
-      const int MAX_TEXT_WIDTH = 440 - 36;  // было 220 - 18 = 404px для текста
-      const int CHAR_WIDTH_SIZE2 = 24;  // было 12 - Ширина символа при size=4
+      const int MAX_TEXT_WIDTH = 220 - 18;  // было 220 - 18 = 404px для текста
+      const int CHAR_WIDTH_SIZE2 = 12;  // было 12 - Ширина символа при size=4
       const int MAX_CHARS = MAX_TEXT_WIDTH / CHAR_WIDTH_SIZE2;  // ~16 символов
       
       // Проверяем длину текста
@@ -760,15 +760,15 @@ void drawMainMenu() {
         
         // Рисуем текст с прокруткой - УВЕЛИЧЕНО В 2 РАЗА
         externalDisplay.setTextColor(TFT_YELLOW);
-        externalDisplay.setTextSize(4);  // было 2
-        externalDisplay.setCursor(30 + 36, y);  // было 15 + 18 - 36px для номера
+        externalDisplay.setTextSize(2);  // было 2
+        externalDisplay.setCursor(15 + 18, y);  // было 15 + 18 - 36px для номера
         externalDisplay.print(scrolledText);
         
       } else {
         // ТЕКСТ КОРОТКИЙ → ОБЫЧНЫЙ РЕНДЕРИНГ - УВЕЛИЧЕНО В 2 РАЗА
         externalDisplay.setTextColor(TFT_YELLOW);
-        externalDisplay.setTextSize(4);  // было 2
-        externalDisplay.setCursor(30 + 36, y);  // было 15 + 18
+        externalDisplay.setTextSize(2);  // было 2
+        externalDisplay.setCursor(15 + 18, y);  // было 15 + 18
         externalDisplay.print(text);
       }
       
@@ -778,8 +778,8 @@ void drawMainMenu() {
       // ═══ ОБЫЧНЫЙ ПУНКТ: НОМЕР + ТЕКСТ - УВЕЛИЧЕНО В 2 РАЗА ═══
       
       externalDisplay.setTextColor(TFT_WHITE);
-      externalDisplay.setTextSize(2);  // было 1
-      externalDisplay.setCursor(30, y);  // было 15
+      externalDisplay.setTextSize(1);  // было 1
+      externalDisplay.setCursor(15, y);  // было 15
       externalDisplay.print(number + text);
       
       y += SPACING_NORMAL;
@@ -787,9 +787,9 @@ void drawMainMenu() {
   }
   
   // ═══ ПОДСКАЗКА - УВЕЛИЧЕНО В 2 РАЗА ═══
-  externalDisplay.setTextSize(2);  // было 1
+  externalDisplay.setTextSize(1);  // было 1
   externalDisplay.setTextColor(TFT_DARKGREY);
-  externalDisplay.setCursor(30, 236);  // было 15, 118
+  externalDisplay.setCursor(15, 118);  // было 15, 118
   externalDisplay.print("up/down Joy/Enter = Select");
   
   Serial.println("\n═══════════════════════════════════════════");
@@ -806,18 +806,18 @@ void drawLoadGameMenu() {
   externalDisplay.fillScreen(BLACK);
   
   // ═══ ЗАГОЛОВОК - УВЕЛИЧЕНО В 2 РАЗА ═══
-  externalDisplay.setTextSize(2);  // было 1
+  externalDisplay.setTextSize(1);  // было 1
   externalDisplay.setTextColor(TFT_CYAN);
-  externalDisplay.setCursor(130, 10);  // было 65, 5
+  externalDisplay.setCursor(65, 5);  // было 65, 5
   externalDisplay.print("LOAD GAME");
   
   // ═══ РАМКА - УВЕЛИЧЕНО В 2 РАЗА ═══
-  externalDisplay.drawRect(20, 40, 440, 220, TFT_WHITE);  // было 10, 20, 220, 110
+  externalDisplay.drawRect(10, 20, 220, 110, TFT_WHITE);  // было 10, 20, 220, 110
   
   // ═══ ПУНКТЫ ПОДМЕНЮ - УВЕЛИЧЕНО В 2 РАЗА ═══
-  int y = 50;  // было 25
-  const int SPACING_NORMAL = 22;  // было 11
-  const int SPACING_SELECTED = 34;  // было 17
+  int y = 25;  // было 25
+  const int SPACING_NORMAL = 11;  // было 11
+  const int SPACING_SELECTED = 17;  // было 17
   
   // V3.134: УБРАЛИ "BACK" (4 пункта) - ESC для возврата!
   String loadGameTexts[4] = {
@@ -834,21 +834,21 @@ void drawLoadGameMenu() {
     if (selectedLoadGameItem == i) {
       // ВЫБРАННЫЙ ПУНКТ - УВЕЛИЧЕНО В 2 РАЗА
       externalDisplay.setTextColor(TFT_YELLOW);
-      externalDisplay.setTextSize(2);  // было 1
-      externalDisplay.setCursor(30, y + 8);  // было 15, y + 4
+      externalDisplay.setTextSize(1);  // было 1
+      externalDisplay.setCursor(15, y + 4);  // было 15, y + 4
       externalDisplay.print(number);
       
       externalDisplay.setTextColor(TFT_YELLOW);
-      externalDisplay.setTextSize(4);  // было 2
-      externalDisplay.setCursor(30 + 36, y);  // было 15 + 18
+      externalDisplay.setTextSize(2);  // было 2
+      externalDisplay.setCursor(15 + 18, y);  // было 15 + 18
       externalDisplay.print(text);
       
       y += SPACING_SELECTED;
     } else {
       // ОБЫЧНЫЙ ПУНКТ - УВЕЛИЧЕНО В 2 РАЗА
       externalDisplay.setTextColor(TFT_WHITE);
-      externalDisplay.setTextSize(2);  // было 1
-      externalDisplay.setCursor(30, y);  // было 15
+      externalDisplay.setTextSize(1);  // было 1
+      externalDisplay.setCursor(15, y);  // было 15
       externalDisplay.print(number + text);
       
       y += SPACING_NORMAL;
@@ -856,9 +856,9 @@ void drawLoadGameMenu() {
   }
   
   // ═══ ПОДСКАЗКА - УВЕЛИЧЕНО В 2 РАЗА ═══
-  externalDisplay.setTextSize(2);  // было 1
+  externalDisplay.setTextSize(1);  // было 1
   externalDisplay.setTextColor(TFT_DARKGREY);
-  externalDisplay.setCursor(30, 236);  // было 15, 118
+  externalDisplay.setCursor(15, 118);  // было 15, 118
   externalDisplay.print("up/down Joy/Enter = Select");
   
   Serial.println("\n═══════════════════════════════════════════");
@@ -902,154 +902,154 @@ void drawInformationScreen(int page) {
   externalDisplay.fillScreen(BLACK);
   
   // ═══ ЗАГОЛОВОК - УВЕЛИЧЕНО В 2 РАЗА ═══
-  externalDisplay.setTextSize(2);  // было 1
+  externalDisplay.setTextSize(1);  // было 1
   externalDisplay.setTextColor(TFT_CYAN);
-  externalDisplay.setCursor(100, 10);  // было 50, 5
+  externalDisplay.setCursor(50, 5);  // было 50, 5
   externalDisplay.printf("Information (%d/6)", page + 1);
   
   // ═══ РАМКА (как в меню) - УВЕЛИЧЕНО В 2 РАЗА ═══
-  externalDisplay.drawRect(20, 40, 440, 190, TFT_WHITE);  // было 10, 20, 220, 95
+  externalDisplay.drawRect(10, 20, 220, 95, TFT_WHITE);  // было 10, 20, 220, 95
   
-  externalDisplay.setTextSize(2);  // было 1
+  externalDisplay.setTextSize(1);  // было 1
   externalDisplay.setTextColor(TFT_WHITE);
   
   if (page == 0) {
     // ═══ СТРАНИЦА 1: ГОРЯЧИЕ КЛАВИШИ (V3.134) - УВЕЛИЧЕНО В 2 РАЗА ═══
-    int y = 50;  // было 25
-    int spacing = 18;  // было 9
+    int y = 25;  // было 25
+    int spacing = 9;  // было 9
     
     externalDisplay.setTextColor(TFT_YELLOW);
-    externalDisplay.setCursor(30, y); y += spacing;  // было 15
+    externalDisplay.setCursor(15, y); y += spacing;  // было 15
     externalDisplay.print("Navigation & Display:");
     
     externalDisplay.setTextColor(TFT_WHITE);
-    externalDisplay.setCursor(30, y); y += spacing;  // было 15
+    externalDisplay.setCursor(15, y); y += spacing;  // было 15
     externalDisplay.print("ESC = Menu");
     
-    externalDisplay.setCursor(30, y); y += spacing;  // было 15
+    externalDisplay.setCursor(15, y); y += spacing;  // было 15
     externalDisplay.print("Opt + P = Pixel-Perfect");
     
-    externalDisplay.setCursor(30, y); y += spacing;  // было 15
+    externalDisplay.setCursor(15, y); y += spacing;  // было 15
     externalDisplay.print("Opt + Z = Zoom cycle");
     
-    externalDisplay.setCursor(30, y); y += spacing;  // было 15
+    externalDisplay.setCursor(15, y); y += spacing;  // было 15
     externalDisplay.print("Opt + up/down = PAN v");
     
-    externalDisplay.setCursor(30, y); y += spacing;  // было 15
+    externalDisplay.setCursor(15, y); y += spacing;  // было 15
     externalDisplay.print("Opt + left/right = PAN h");
     
-    y += 6;  // было 3 - Разделитель
+    y += 3;  // было 3 - Разделитель
     externalDisplay.setTextColor(TFT_YELLOW);
-    externalDisplay.setCursor(30, y); y += spacing;  // было 15
+    externalDisplay.setCursor(15, y); y += spacing;  // было 15
     externalDisplay.print("Sound & System:");
     
     externalDisplay.setTextColor(TFT_WHITE);
-    externalDisplay.setCursor(30, y); y += spacing;  // было 15
+    externalDisplay.setCursor(15, y); y += spacing;  // было 15
     externalDisplay.print("Opt + [+]/[-] = Volume");
     
-    externalDisplay.setCursor(30, y); y += spacing;  // было 15
+    externalDisplay.setCursor(15, y); y += spacing;  // было 15
     externalDisplay.print("Opt + M = Mute");
     
   } else if (page == 1) {
     // ═══ СТРАНИЦА 2: ЕЩЁ HOTKEYS (V3.134) - УВЕЛИЧЕНО В 2 РАЗА ═══
-    int y = 50;  // было 25
-    int spacing = 18;  // было 9
+    int y = 25;  // было 25
+    int spacing = 9;  // было 9
     
     externalDisplay.setTextColor(TFT_YELLOW);
-    externalDisplay.setCursor(30, y); y += spacing;  // было 15
+    externalDisplay.setCursor(15, y); y += spacing;  // было 15
     externalDisplay.print("Game Controls:");
     
     externalDisplay.setTextColor(TFT_WHITE);
-    externalDisplay.setCursor(30, y); y += spacing;  // было 15
+    externalDisplay.setCursor(15, y); y += spacing;  // было 15
     externalDisplay.print("Opt + J = Joystick mode");
     
     externalDisplay.setTextColor(TFT_CYAN);
-    externalDisplay.setTextSize(2);  // было 1
-    externalDisplay.setCursor(40, y); y += spacing;  // было 20
+    externalDisplay.setTextSize(1);  // было 1
+    externalDisplay.setCursor(20, y); y += spacing;  // было 20
     externalDisplay.print("(Joy -> QAOP+Space)");
     
-    y += 6;  // было 3
-    externalDisplay.setTextSize(2);  // было 1
+    y += 3;  // было 3
+    externalDisplay.setTextSize(1);  // было 1
     externalDisplay.setTextColor(TFT_YELLOW);
-    externalDisplay.setCursor(30, y); y += spacing;  // было 15
+    externalDisplay.setCursor(15, y); y += spacing;  // было 15
     externalDisplay.print("System:");
     
     externalDisplay.setTextColor(TFT_WHITE);
-    externalDisplay.setCursor(30, y); y += spacing;  // было 15
+    externalDisplay.setCursor(15, y); y += spacing;  // было 15
     externalDisplay.print("Opt + ESC = Reset");
     
-    externalDisplay.setCursor(30, y); y += spacing;  // было 15
+    externalDisplay.setCursor(15, y); y += spacing;  // было 15
     externalDisplay.print("TAB = Pause/Resume");
     
-    externalDisplay.setCursor(30, y); y += spacing;  // было 15
+    externalDisplay.setCursor(15, y); y += spacing;  // было 15
     externalDisplay.print("Ctrl = Screenshot (BMP)");
     
   } else if (page == 2) {
     // ═══ СТРАНИЦА 3: ZX SPECTRUM BUTTONS (V3.134) - УВЕЛИЧЕНО В 2 РАЗА ═══
-    int y = 50;  // было 25
-    int spacing = 20;  // было 10
+    int y = 25;  // было 25
+    int spacing = 10;  // было 10
     
     externalDisplay.setTextColor(TFT_YELLOW);
-    externalDisplay.setCursor(80, y); y += spacing + 6;  // было 40, spacing + 3
+    externalDisplay.setCursor(40, y); y += spacing + 3;  // было 40, spacing + 3
     externalDisplay.print("ZX Spectrum Buttons:");
     
-    externalDisplay.setTextSize(2);  // было 1
+    externalDisplay.setTextSize(1);  // было 1
     
     // Fn = SYMBOL SHIFT (КРАСНЫЙ)
-    externalDisplay.setCursor(30, y); y += spacing;  // было 15
+    externalDisplay.setCursor(15, y); y += spacing;  // было 15
     externalDisplay.setTextColor(TFT_RED);
     externalDisplay.print("Fn");
     externalDisplay.setTextColor(TFT_WHITE);
     externalDisplay.print(" = SYMBOL SHIFT");
     
     // Aa = CAPS SHIFT (СИНИЙ)
-    externalDisplay.setCursor(30, y); y += spacing;  // было 15
+    externalDisplay.setCursor(15, y); y += spacing;  // было 15
     externalDisplay.setTextColor(TFT_BLUE);
     externalDisplay.print("Aa");
     externalDisplay.setTextColor(TFT_WHITE);
     externalDisplay.print(" = CAPS SHIFT");
     
     // [_] = BREAK SPACE (бортики как у Space)
-    externalDisplay.setCursor(30, y); y += spacing;  // было 15
+    externalDisplay.setCursor(15, y); y += spacing;  // было 15
     externalDisplay.setTextColor(TFT_WHITE);
     externalDisplay.print("[_] = BREAK SPACE");
     
     // Ok = ENTER
-    externalDisplay.setCursor(30, y); y += spacing;  // было 15
+    externalDisplay.setCursor(15, y); y += spacing;  // было 15
     externalDisplay.setTextColor(TFT_WHITE);
     externalDisplay.print("Ok = ENTER");
     
-    y += 10;  // было 5
+    y += 5;  // было 5
     externalDisplay.setTextColor(TFT_CYAN);
-    externalDisplay.setTextSize(2);  // было 1
-    externalDisplay.setCursor(30, y); y += spacing;  // было 15
+    externalDisplay.setTextSize(1);  // было 1
+    externalDisplay.setCursor(15, y); y += spacing;  // было 15
     externalDisplay.print("Note: Standard keys work");
-    externalDisplay.setCursor(30, y);  // было 15
+    externalDisplay.setCursor(15, y);  // было 15
     externalDisplay.print("as on ZX Spectrum!");
     
   } else if (page == 3) {
     // ═══ СТРАНИЦА 4: CREDITS (CENTERED) - УВЕЛИЧЕНО В 2 РАЗА ═══
-    int y = 70;  // было 35
-    int spacing = 24;  // было 12
+    int y = 35;  // было 35
+    int spacing = 12;  // было 12
     
-    externalDisplay.setTextSize(4);  // было 2
+    externalDisplay.setTextSize(2);  // было 2
     externalDisplay.setTextColor(TFT_YELLOW);
-    externalDisplay.setCursor(80, y); y += 40;  // было 40, y += 20
+    externalDisplay.setCursor(40, y); y += 20;  // было 40, y += 20
     externalDisplay.print("ZX-Cardputer");
     
-    externalDisplay.setTextSize(2);  // было 1
+    externalDisplay.setTextSize(1);  // было 1
     externalDisplay.setTextColor(TFT_WHITE);
-    externalDisplay.setCursor(160, y); y += spacing;  // было 80
+    externalDisplay.setCursor(80, y); y += spacing;  // было 80
     externalDisplay.print("Andy + AI");
     
-    externalDisplay.setCursor(180, y); y += spacing;  // было 90
+    externalDisplay.setCursor(90, y); y += spacing;  // было 90
     externalDisplay.print("2025");
     
-    externalDisplay.setCursor(170, y); y += spacing;  // было 85
+    externalDisplay.setCursor(85, y); y += spacing;  // было 85
     externalDisplay.print("Portugal");
     
     externalDisplay.setTextColor(TFT_CYAN);
-    externalDisplay.setCursor(180, y); y += 24;  // было 90, y += 12
+    externalDisplay.setCursor(90, y); y += 12;  // было 90, y += 12
     externalDisplay.print("V3.137");
     
     externalDisplay.setTextColor(TFT_MAGENTA);
@@ -1058,65 +1058,65 @@ void drawInformationScreen(int page) {
     
   } else if (page == 4) {
     // ═══ СТРАНИЦА 5: SPECIAL THANKS 1/2 (CENTERED) - УВЕЛИЧЕНО В 2 РАЗА ═══
-    externalDisplay.setTextSize(2);  // было 1
+    externalDisplay.setTextSize(1);  // было 1
     externalDisplay.setTextColor(TFT_YELLOW);
-    externalDisplay.setCursor(110, 50);  // было 55, 25
+    externalDisplay.setCursor(55, 25);  // было 55, 25
     externalDisplay.print("Special Thanks 1/2");
     
-    int y = 84;  // было 42
-    int spacing = 26;  // было 13
+    int y = 42;  // было 42
+    int spacing = 13;  // было 13
     
     // ✅ ESP32 Rainbow (centered)
     externalDisplay.setTextColor(TFT_WHITE);
-    externalDisplay.setCursor(90, y); y += spacing;  // было 45
+    externalDisplay.setCursor(45, y); y += spacing;  // было 45
     externalDisplay.print("ESP32 Rainbow");
     externalDisplay.setTextColor(TFT_CYAN);
-    externalDisplay.setCursor(80, y); y += spacing;  // было 40
+    externalDisplay.setCursor(40, y); y += spacing;  // было 40
     externalDisplay.print("Z80 core & tape");
     
-    y += 16;  // было 8 - Отступ между субъектами
+    y += 8;  // было 8 - Отступ между субъектами
     
     // ✅ M5Stack (centered)
     externalDisplay.setTextColor(TFT_WHITE);
-    externalDisplay.setCursor(150, y); y += spacing;  // было 75
+    externalDisplay.setCursor(75, y); y += spacing;  // было 75
     externalDisplay.print("M5Stack");
     externalDisplay.setTextColor(TFT_CYAN);
-    externalDisplay.setCursor(100, y); y += spacing;  // было 50
+    externalDisplay.setCursor(50, y); y += spacing;  // было 50
     externalDisplay.print("Cardputer HW");
     
   } else if (page == 5) {
     // ═══ СТРАНИЦА 6: SPECIAL THANKS 2/2 (CENTERED) - УВЕЛИЧЕНО В 2 РАЗА ═══
-    externalDisplay.setTextSize(2);  // было 1
+    externalDisplay.setTextSize(1);  // было 1
     externalDisplay.setTextColor(TFT_YELLOW);
-    externalDisplay.setCursor(110, 50);  // было 55, 25
+    externalDisplay.setCursor(55, 25);  // было 55, 25
     externalDisplay.print("Special Thanks 2/2");
     
-    int y = 84;  // было 42
-    int spacing = 26;  // было 13
+    int y = 42;  // было 42
+    int spacing = 13;  // было 13
     
     // ✅ ChatGPT-4 & Claude (AI Team, centered)
     externalDisplay.setTextColor(TFT_WHITE);
-    externalDisplay.setCursor(90, y); y += spacing;  // было 45
+    externalDisplay.setCursor(45, y); y += spacing;  // было 45
     externalDisplay.print("ChatGPT & Claude");
     externalDisplay.setTextColor(TFT_CYAN);
-    externalDisplay.setCursor(100, y); y += spacing;  // было 50
+    externalDisplay.setCursor(50, y); y += spacing;  // было 50
     externalDisplay.print("Perfect code");
     
-    y += 16;  // было 8 - Отступ между субъектами
+    y += 8;  // было 8 - Отступ между субъектами
     
     // ✅ VolosR (centered)
     externalDisplay.setTextColor(TFT_WHITE);
-    externalDisplay.setCursor(160, y); y += spacing;  // было 80
+    externalDisplay.setCursor(80, y); y += spacing;  // было 80
     externalDisplay.print("VolosR");
     externalDisplay.setTextColor(TFT_CYAN);
-    externalDisplay.setCursor(100, y); y += spacing;  // было 50
+    externalDisplay.setCursor(50, y); y += spacing;  // было 50
     externalDisplay.print("M5Mp3 audio ref");
   }
   
   // ═══ ПОДСКАЗКИ УПРАВЛЕНИЯ - УВЕЛИЧЕНО В 2 РАЗА ═══
-  externalDisplay.setTextSize(2);  // было 1
+  externalDisplay.setTextSize(1);  // было 1
   externalDisplay.setTextColor(TFT_CYAN);
-  externalDisplay.setCursor(20, 240);  // было 10, 120
+  externalDisplay.setCursor(10, 120);  // было 10, 120
   externalDisplay.print("left/right = Page  ESC = Back");
 }
 
@@ -1124,17 +1124,17 @@ void drawFileBrowser() {
   externalDisplay.fillScreen(BLACK);
   
   // ═══ ЗАГОЛОВОК - УВЕЛИЧЕНО В 2 РАЗА ═══
-  externalDisplay.setTextSize(2);  // было 1
+  externalDisplay.setTextSize(1);  // было 1
   externalDisplay.setTextColor(TFT_CYAN);
-  externalDisplay.setCursor(20, 10);  // было 10, 5
+  externalDisplay.setCursor(10, 5);  // было 10, 5
   externalDisplay.printf("Load %s", browserFilter.c_str());
   
   // ═══ СЧЁТЧИК (справа) - УВЕЛИЧЕНО В 2 РАЗА ═══
-  externalDisplay.setCursor(360, 10);  // было 180, 5
+  externalDisplay.setCursor(180, 5);  // было 180, 5
   externalDisplay.printf("%d/%d", selectedFile + 1, filteredCount);
   
   // ═══ РАМКА (как в меню) - УВЕЛИЧЕНО В 2 РАЗА ═══
-  externalDisplay.drawRect(20, 40, 440, 190, TFT_WHITE);  // было 10, 20, 220, 95
+  externalDisplay.drawRect(10, 20, 220, 95, TFT_WHITE);  // было 10, 20, 220, 95
   
   // ═══ СПИСОК ФАЙЛОВ (8 штук) - УВЕЛИЧЕНО В 2 РАЗА ═══
   // Вычисляем первый видимый файл (скроллинг)
@@ -1143,7 +1143,7 @@ void drawFileBrowser() {
   int firstVisible = selectedFile - 3;  // Выбранный будет на позиции 3 (в центре)
   if (firstVisible < 0) firstVisible = 0;  // Если файлов меньше 4, начинаем с первого
   
-  int y = 50;  // было 25 - Начальная Y позиция
+  int y = 25;  // было 25 - Начальная Y позиция
   
   for (int i = 0; i < 8; i++) {
     int fileIdx = firstVisible + i;
@@ -1155,21 +1155,21 @@ void drawFileBrowser() {
     
     // Устанавливаем размер и цвет - УВЕЛИЧЕНО В 2 РАЗА
     if (isSelected) {
-      externalDisplay.setTextSize(4);  // было 2
+      externalDisplay.setTextSize(2);  // было 2
       externalDisplay.setTextColor(TFT_YELLOW);
     } else {
-      externalDisplay.setTextSize(2);  // было 1
+      externalDisplay.setTextSize(1);  // было 1
       externalDisplay.setTextColor(TFT_WHITE);
     }
     
-    externalDisplay.setCursor(30, y);  // было 15
+    externalDisplay.setCursor(15, y);  // было 15
     
     // Получаем имя файла
     String name = filteredFiles[fileIdx];
     
     // Обрезаем длинные имена - ПЕРЕСЧИТАНО ДЛЯ НОВОГО РАЗМЕРА
     // Для size=4: ~20 символов, для size=2: ~35 символов (на экране 480px)
-    int maxLen = isSelected ? 20 : 35;  // было 18 : 28
+    int maxLen = isSelected ? 18 : 28;  // было 18 : 28
     if (name.length() > maxLen) {
       name = name.substring(0, maxLen - 3) + "...";
     }
@@ -1177,13 +1177,13 @@ void drawFileBrowser() {
     externalDisplay.print(name);
     
     // Следующая строка (большой шрифт занимает больше места) - УВЕЛИЧЕНО В 2 РАЗА
-    y += isSelected ? 32 : 22;  // было 16 : 11
+    y += isSelected ? 16 : 11;  // было 16 : 11
   }
   
   // ═══ ПОДСКАЗКИ УПРАВЛЕНИЯ - УВЕЛИЧЕНО В 2 РАЗА ═══
-  externalDisplay.setTextSize(2);  // было 1
+  externalDisplay.setTextSize(1);  // было 1
   externalDisplay.setTextColor(TFT_CYAN);
-  externalDisplay.setCursor(10, 240);  // было 5, 120
+  externalDisplay.setCursor(5, 120);  // было 5, 120
   if (joystick2Available) {
     externalDisplay.print("Joy/up/down=Nav Enter=Load ESC=Back");
   } else {
@@ -1197,7 +1197,7 @@ void setup() {
   
   Serial.println("\n========================================");
   Serial.println("ZX Spectrum - External Display");
-  Serial.println("Cardputer-Adv (ILI9488 480x320)");
+  Serial.println("Cardputer-Adv (ILI9488 240x320)");
   Serial.println("========================================\n");
   
   // Set CS pins HIGH before initialization
@@ -1355,21 +1355,21 @@ const int PAN_STEP = 8;    // Шаг перемещения (8 пикселей 
 
 // Для режима PIXEL-PERFECT (1:1) - NATIVE RESOLUTION
 // ✅ ADAPTED FOR EXTERNAL DISPLAY: 256×192 native, no pan needed (fits perfectly)
-int pixelPerfectPanX = 0;  // No horizontal pan needed (256 fits in 480)
+int pixelPerfectPanX = 8;  // No horizontal pan needed (256 fits in 480)   //Verificare se crasha - era 0
 int pixelPerfectPanY = 0;  // No vertical pan needed (192 fits in 320)
-const int PP_MAX_PAN_X = 0; // No pan needed (native resolution fits)
+const int PP_MAX_PAN_X = 8; // No pan needed (native resolution fits) //Verificare se crasha - era 0
 const int PP_MAX_PAN_Y = 0; // No pan needed (native resolution fits)
 
 // Функция рендеринга ZX Spectrum экрана (С ЦВЕТАМИ + ZOOM/PAN + PIXEL-PERFECT!)
 // ✅ NATIVE RESOLUTION: 256×192 (ZX Spectrum native, centered on 480×320 display)
 void renderScreen() {
-  const int ZX_WIDTH = 256;
+  const int ZX_WIDTH = 256; // era 256
   const int ZX_HEIGHT = 192;
-  const int DISPLAY_WIDTH = 256;   // ✅ Native ZX Spectrum width
+  const int DISPLAY_WIDTH = 240;   // ✅ Native ZX Spectrum width  //era 256
   const int DISPLAY_HEIGHT = 192;  // ✅ Native ZX Spectrum height
   
   // ✅ Centering offsets for 480×320 external display
-  const int OFFSET_X = (480 - DISPLAY_WIDTH) / 2;   // 112 pixels (centered)
+  const int OFFSET_X = (240 - DISPLAY_WIDTH) / 2;   // 112 pixels (centered)
   const int OFFSET_Y = (320 - DISPLAY_HEIGHT) / 2;  // 64 pixels (centered)
   
   // ═══════════════════════════════════════════════════════════

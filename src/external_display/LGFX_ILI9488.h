@@ -20,7 +20,7 @@ struct Panel_ILI9488_Local : public lgfx::v1::Panel_LCD {
     Panel_ILI9488_Local(void) {
         // Panel config: 320×480 (physical 480x320, rotated)
         _cfg.memory_width  = _cfg.panel_width  = 320;
-        _cfg.memory_height = _cfg.panel_height = 480;
+        _cfg.memory_height = _cfg.panel_height = 240;
     }
 
     void setColorDepth_impl(lgfx::v1::color_depth_t depth) override {
